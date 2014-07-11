@@ -1,0 +1,16 @@
+.form-group {
+	min-height: 32px;
+}
+
+table {
+	max-height: 40px;
+}
+
+.dt-wrapper {
+	overflow:auto;
+	max-height: 800px; 
+}
+
+th {
+	min-width: 50px;
+}

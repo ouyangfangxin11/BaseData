@@ -1,0 +1,73 @@
+.navbar-inverse {
+   background-color: rgb(51, 51, 51);
+}
+
+.sidebar  {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: rgb(51, 51, 51);
+    border-right: 1px solid #525151;
+    border-top: 1px solid #525151;
+  }
+}
+
+.glyphicon {
+margin-bottom: 10px;
+font-size: 20px;
+vertical-align: middle;
+}
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 16px;
+  background-color: rgb(51, 51, 51)  !important;
+  color: rgb(168, 168, 168);
+  z-index: 1000;
+}
+.nav-sidebar .active, 
+.nav-sidebar li > a:focus {
+  color: rgb(255, 255, 255);
+}
+
+.nav-sidebar li > a:hover{
+  color: rgb(255, 255, 255);
+}
+
+.nav-sidebar > li > ul > li > a{
+  padding-left: 42px;
+  color: rgb(168, 168, 168);
+  background: rgba(69, 69, 69, 0.6) !important;
+}
+.nav-sidebar li > ul > li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8px;
+  left: 23px;
+  top: 19px;
+  border-top: 1px solid #7A7A7A;
+  z-index: 1
+}
+.nav-sidebar > li > ul::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  left: 23px;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid #7A7A7A;
+}

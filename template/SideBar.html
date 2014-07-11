@@ -1,0 +1,27 @@
+<ul class="nav nav-sidebar">
+	<li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i> 首页</a></li>
+	<li>
+		<a href="#Dictionary" data-toggle="collapse"><i class="glyphicon glyphicon-book"></i> 协议字典</a>
+		<ul id="Dictionary" class="nav nav-list collapse menu-second">
+			<li><a href="#"> 协议</a></li>
+			<li><a href="#"> 协议模板</a></li>
+			<li><a href="#"> 模板参数</a></li>
+			<li><a href="#"> 处理方案</a></li>
+			
+		</ul>
+	</li>
+	
+	<li>
+		<a href="#Equipment" data-toggle="collapse"><i class="glyphicon glyphicon-cog"></i> 设备管理</a>
+		<ul id="Equipment" class="nav nav-list collapse menu-second">
+			<li><a href="#"> 设备</a></li>
+			<li><a href="#"> 设备系列</a></li>
+		</ul>
+	</li>	
+</ul>
+<script>
+	$(".nav-sidebar li").click(function(){
+		$(".nav-sidebar li").removeClass("active");
+		this.addClass("active");
+	});
+</script>

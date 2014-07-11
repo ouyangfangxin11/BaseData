@@ -1,0 +1,40 @@
+body{
+	min-width:1147px;
+	background: rgb(238, 238, 238);
+}
+
+.main {
+	top: 51px;
+	padding-top: 30px;	
+	padding-left: 60px;
+}
+
+#YaHei{
+	font-family:"Microsoft YaHei";
+}
+
+.page-header {
+	margin-top: 0px;
+	border-bottom: 1px solid rgb(168, 168, 168);
+}
+
+#dashboard-table{
+	height:254px;
+}
+
+#dashboard-table-scroll{
+	overflow:scroll; 
+	height:240px; 
+}
+
+#container-highcharts{
+	min-width: 310px; 
+	height: 400px; 
+	margin: 0 auto
+}
+hr{
+	margin: 5px;
+}
+form label {
+	font-weight:normal; 
+}
