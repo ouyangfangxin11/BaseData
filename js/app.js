@@ -14,6 +14,10 @@ BaseApp.config(['$routeProvider',
                 templateUrl: 'template/model.html',
                 controller: 'modelCtr',
             })
+            .when('/scheme', {
+                templateUrl: 'template/scheme.html',
+                
+            })
             .when('/parameter', {
                 templateUrl: 'template/model.html',
                 controller: 'parameterCtr',
