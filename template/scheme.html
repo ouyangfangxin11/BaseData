@@ -1,0 +1,295 @@
+<div class="page-header">
+    <h1 id="YaHei">Scheme</h1>
+</div>
+<div class="jarviswidget jarviswidget-sortable" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false" role="widget" style="margin-right:40px">
+    <div role="content">
+        <div class="widget-body no-padding">
+            <div class="widget-body-toolbar">
+            </div>
+            <div id="dt_basic_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                <div class="dt-top-row">
+                    <div class="dataTables_filter" id="dt_basic_filter">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i>
+                            </span>
+                            <input class="form-control" placeholder="scheme" type="text" aria-controls="dt_basic">
+                        </div>
+                        <button class="btn btn-default" >查找</button>
+                        <button class="btn btn-default" data-toggle="modal" data-target="#myModal">新增</button>
+                        <button class="btn btn-default" id="deleteScheme">删除</button>
+                    </div>
+                </div>
+                <div class="dt-wrapper">
+                    <table class="table table-bordered table-striped table-condensed table-hover smart-form has-tickbox">
+                        <thead>
+                            <tr>
+                                <th style="max-width:26px">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline" id="checkall">
+                                        <i></i> 
+                                    </label>
+                                </th>
+                                <th style="max-width:26px">删除</th>
+                                <th style="width:196px">方案编号</th>
+                                <th style="width:196px">方案名称</th>
+                                <th style="width:196px">方案参数</th>
+                                <th style="width:196px">对应类名</th>
+                                <th style="width:196px">方案参数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scheme-table">
+                            <tr>
+                                <td>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline">
+                                        <i></i> 
+                                    </label>
+                                </td>
+                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td class="row-content">Row1.1</td>
+                                <td class="row-content">Row2</td>
+                                <td class="row-content">Row3</td>
+                                <td class="row-content">Row4</td>
+                                <td class="row-content">Row5</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline">
+                                        <i></i> 
+                                    </label>
+                                </td>
+                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td class="row-content">Row1.2</td>
+                                <td class="row-content">Row2</td>
+                                <td class="row-content">Row3</td>
+                                <td class="row-content">Row4</td>
+                                <td class="row-content">Row5</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline">
+                                        <i></i> 
+                                    </label>
+                                </td>
+                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td class="row-content">Row1.3</td>
+                                <td class="row-content">Row2</td>
+                                <td class="row-content">Row3</td>
+                                <td class="row-content">Row4</td>
+                                <td class="row-content">Row5</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline">
+                                        <i></i> 
+                                    </label>
+                                </td>
+                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td class="row-content">Row1.4</td>
+                                <td class="row-content">Row2</td>
+                                <td class="row-content">Row3</td>
+                                <td class="row-content">Row4</td>
+                                <td class="row-content">Row5</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline">
+                                        <i></i> 
+                                    </label>
+                                </td>
+                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td class="row-content">Row1.5</td>
+                                <td class="row-content">Row2</td>
+                                <td class="row-content">Row3</td>
+                                <td class="row-content">Row4</td>
+                                <td class="row-content">Row5</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline">
+                                        <i></i> 
+                                    </label>
+                                </td>
+                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td class="row-content">Row1.6</td>
+                                <td class="row-content">Row2</td>
+                                <td class="row-content">Row3</td>
+                                <td class="row-content">Row4</td>
+                                <td class="row-content">Row5</td>
+                            <tr>
+                                <td>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline">
+                                        <i></i> 
+                                    </label>
+                                </td>
+                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td class="row-content">Row1.7</td>
+                                <td class="row-content">Row2</td>
+                                <td class="row-content">Row3</td>
+                                <td class="row-content">Row4</td>
+                                <td class="row-content">Row5</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline">
+                                        <i></i> 
+                                    </label>
+                                </td>
+                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td class="row-content">Row1.8</td>
+                                <td class="row-content">Row2</td>
+                                <td class="row-content">Row3</td>
+                                <td class="row-content">Row4</td>
+                                <td class="row-content">Row5</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline">
+                                        <i></i> 
+                                    </label>
+                                </td>
+                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td class="row-content">Row1.9</td>
+                                <td class="row-content">Row2</td>
+                                <td class="row-content">Row3</td>
+                                <td class="row-content">Row4</td>
+                                <td class="row-content">Row5</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline">
+                                        <i></i> 
+                                    </label>
+                                </td>
+                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td class="row-content">Row2.0</td>
+                                <td class="row-content">Row2</td>
+                                <td class="row-content">Row3</td>
+                                <td class="row-content">Row4</td>
+                                <td class="row-content">Row5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">基本属性</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label for="schemeID" class="col-sm-3 control-label">方案编号</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="inputschemeID" placeholder="schemeID">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="schemeName" class="col-sm-3 control-label">方案名称</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="inputschemeName" placeholder="schemeName">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="className" class="col-sm-3 control-label">对应类名</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="inputclassName" placeholder="className">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="parameter" class="col-sm-3 control-label">接受参数</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="inputparameter" placeholder="parameter">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="handleType" class="col-sm-3 control-label">处理类型</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="inputhandleType" placeholder="handleType">
+                    </div>
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="resetScheme">重置</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="submitAddScheme">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+    $(".checkbox input").click(function() {
+        if ($(this)[0].checked) {
+            $(this).parent().find("i").addClass("glyphicon glyphicon-ok");
+        } else {
+            $(this).parent().find("i").removeClass("glyphicon glyphicon-ok");
+        }
+    });
+    $("#checkall").click(function() {
+        if ($(this)[0].checked) {
+            $(".checkbox input").parent().find("i").addClass("glyphicon glyphicon-ok");
+        } else {
+            $(".checkbox input").parent().find("i").removeClass("glyphicon glyphicon-ok");
+        }
+    });
+
+    
+    $("#scheme-table").find(".row-content").bind("dblclick", function(){  
+        var td = $(this);
+        var text = td.text();
+        var txt = $("<input type='text'>").val(text);
+        txt.blur(function(){
+            var newText = $(this).val();
+            $(this).remove();
+            td.text(newText);
+        });
+        txt.keypress(function(e){
+            var code = event.keyCode; 
+            if (13 == code) { 
+            var newText = $(this).val();
+            $(this).remove();
+            td.text(newText);
+            }
+        });
+        td.text("");
+        td.append(txt);
+    }); 
+
+    $("td button").click(function(){
+        $(this).parent().parent().remove();
+    });
+
+    $("#deleteScheme").click(function(){
+        $(".checkbox input").each(function(){
+            if($(this).parent().find("i").hasClass("glyphicon glyphicon-ok"))
+                $(this).parent().parent().parent().remove();
+        })
+    });
+
+    $("#resetScheme").click(function(){
+        $("#inputschemeID").val("");
+        $("#inputschemeName").val("");
+        $("#inputclassName").val("");
+        $("#inputparameter").val("");
+        $("#inputhandleType").val("");
+    });
+
+    $("#submitAddScheme").click(function(){
+      var newRow='<tr><td><label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i></label></td><td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td><td class="row-content">'+$("#inputschemeID").val()+'</td><td class="row-content">'+$("#inputschemeName").val()+'</td><td class="row-content">'+$("#inputclassName").val()+'</td><td class="row-content">'+$("#inputparameter").val()+'</td><td class="row-content">'+$("#inputhandleType").val()+'</td></tr>' ;
+      $("#scheme-table").append(newRow);
+    });
+    </script>
