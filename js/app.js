@@ -22,6 +22,9 @@ BaseApp.config(['$routeProvider',
                 templateUrl: 'template/model.html',
                 controller: 'parameterCtr',
             })
+            .when('/parameter/reset', {
+                redirectTo: '/parameter'
+            })
             .otherwise({
                 redirectTo: '/dashboard'
             });
@@ -98,12 +101,12 @@ BaseApp.controller('parameterCtr', function($scope) {
         alert($(this).value());
     };
     $scope.add = function() {
-        var doms = $(".glyphicon.glyphicon-ok").parents("tr");
+        var doms = $("tbody .glyphicon.glyphicon-ok").parents("tr");
         var oldlength = $('#oldmodel').find('tr').length;
         var newlength = $('.emptytable').length;
         var length = $("#newmodel").children().length - newlength;
         var template = "<tr><td><label class=\"checkbox\"><input type=\"checkbox\" name=\"checkbox-inline\" disabled='disabled'></label></td><td></td><td></td><td></td><td></td><td></td><td class=\"hidden\"></td></tr>";
-        $(".glyphicon.glyphicon-ok").parents("tr").remove();
+        $("tbody .glyphicon.glyphicon-ok").parents("tr").remove();
         for (var i = doms.length - 1; i >= 0; i--) {
             length++;
             $($(doms[i]).find("td")[0]).html(length.toString());
