@@ -6,11 +6,25 @@ body{
 .main {
 	top: 51px;
 	padding-top: 30px;	
-	padding-left: 60px;
+	padding-left: 40px;
+}
+
+.row {
+	padding:15px;
+}
+
+.progress-bar {
+	position: relative !important;
+}
+
+div .divider {
+	width: 100%;
+	border-bottom: 1px solid rgb(200, 200, 200);
 }
 
 #YaHei{
 	font-family:"Microsoft YaHei";
+	padding-bottom: 10px;
 }
 
 .page-header {
@@ -37,4 +51,12 @@ hr{
 }
 form label {
 	font-weight:normal; 
+} 
+
+#modelParameter {
+	min-height: 400px;
+}
+
+.no-padding .widget-body-toolbar {
+	background: #ffffff;
 }

@@ -6,9 +6,14 @@ table {
 	max-height: 40px;
 }
 
-.dt-wrapper {
+.dt-parameter {
 	overflow:auto;
 	max-height: 800px; 
+}
+
+.dt-model {
+	overflow:auto;
+	max-height: 350px; 
 }
 
 th {

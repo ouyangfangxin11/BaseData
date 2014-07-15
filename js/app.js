@@ -51,6 +51,7 @@ BaseApp.controller('indexCtr', function($scope) {
     exporting(Highcharts);
     highchartdata();
 });
+
 BaseApp.controller('parameteraddCtr', function($scope) {
     $scope.schemes = [{
         'num': 1,
@@ -182,9 +183,6 @@ BaseApp.controller('parameteraddCtr', function($scope) {
             $(".checkbox input").parent().find("i").removeClass("glyphicon glyphicon-ok");
         }
     };
-    $scope.changeParameter = function() {
-        alert($(this).value());
-    };
     $scope.add = function() {
         var doms = $("tbody .glyphicon.glyphicon-ok").parents("tr");
         var oldlength = $('#oldmodel').find('tr').length;
@@ -309,4 +307,92 @@ BaseApp.controller('parameterlookCtr', function($scope) {
     $scope.update = function(id) {
         window.location.href = "#/parameter/add/" + id;
     }
+});
+
+BaseApp.controller('modelCtr', function($scope) {
+    $scope.parameters = [{
+        'num': 'num1',
+        'name': 'name1',
+        'type': 'type1',
+        'length': '1'
+    }, {
+        'num': 'num2',
+        'name': 'name2',
+        'type': 'type2',
+        'length': '2'
+    }, {
+        'num': 'num3',
+        'name': 'name3',
+        'type': 'type3',
+        'length': '3'
+    }, {
+        'num': 'num4',
+        'name': 'name4',
+        'type': 'type4',
+        'length': '4'
+    }, {
+        'num': 'num5',
+        'name': 'name5',
+        'type': 'type5',
+        'length': '5'
+    }, {
+        'num': 'num6',
+        'name': 'name1',
+        'type': 'type1',
+        'length': 'length1'
+    }, {
+        'num': 'num7',
+        'name': 'name2',
+        'type': 'type2',
+        'length': 'length2'
+    }, {
+        'num': 'num8',
+        'name': 'name3',
+        'type': 'type3',
+        'length': 'length3'
+    }, {
+        'num': 'num9',
+        'name': 'name4',
+        'type': 'type4',
+        'length': 'length4'
+    }, {
+        'num': 'num10',
+        'name': 'name5',
+        'type': 'type5',
+        'length': 'length5'
+    }];
+
+    $scope.check = function(dom) {
+        if (dom.checked) {
+            $(dom).parent().find("i").addClass("glyphicon glyphicon-ok");
+        } else {
+            $(dom).parent().find("i").removeClass("glyphicon glyphicon-ok");
+        }
+    };
+    $scope.checkall = function(dom) {
+        if (dom.checked) {
+            $(dom).parents('table').find("i").addClass("glyphicon glyphicon-ok");
+        } else {
+            $(dom).parents('table').find("i").removeClass("glyphicon glyphicon-ok");
+        }
+    };
+    $scope.add1 = function() {
+        var doms = $("#oldparameter .glyphicon.glyphicon-ok").parents("tr");
+        var oldlength = $('#oldparameter').find('tr').length;
+        var newlength = $('.emptytable').length;
+        var length = $("#newparameter").children().length - newlength;
+        $("#oldparameter .glyphicon.glyphicon-ok").parents("tr").remove();
+        for (var i = doms.length - 1; i >= 0; i--) {
+            length++;
+            $($(doms[i]).find("td")[0]).html(length.toString());
+            if (newlength > 0) {
+                newlength--;
+                $($('.emptytable')[0]).html($(doms[i]).html());
+                $($('.emptytable')[0]).removeClass('emptytable');
+            } else {
+                $("#newparameter").append(doms[i]);
+            }
+            oldlength--;
+        }
+    };
 });
