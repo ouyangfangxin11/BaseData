@@ -16,7 +16,12 @@ BaseApp.config(['$routeProvider',
             })
             .when('/scheme', {
                 templateUrl: 'template/scheme.html',
-
+            })
+            .when('/equipment', {
+                templateUrl: 'template/equipment.html',
+            })
+            .when('/iofile', {
+                templateUrl: 'template/iofile.html',
             })
             .when('/parameter', {
                 templateUrl: 'template/parameter_look.html',
