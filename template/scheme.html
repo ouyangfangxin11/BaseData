@@ -289,7 +289,17 @@
     });
 
     $("#submitAddScheme").click(function(){
-      var newRow='<tr><td><label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i></label></td><td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td><td class="row-content">'+$("#inputschemeID").val()+'</td><td class="row-content">'+$("#inputschemeName").val()+'</td><td class="row-content">'+$("#inputclassName").val()+'</td><td class="row-content">'+$("#inputparameter").val()+'</td><td class="row-content">'+$("#inputhandleType").val()+'</td></tr>' ;
-      $("#scheme-table").append(newRow);
+        if($("#inputschemeID").val() != "" && $("#inputschemeName").val() != "" && $("#inputclassName").val() != "" && $("#inputparameter").val() != "" && $("#inputhandleType").val() != ""){
+            var newRow='<tr><td><label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i></label></td><td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td><td class="row-content">'+$("#inputschemeID").val()+'</td><td class="row-content">'+$("#inputschemeName").val()+'</td><td class="row-content">'+$("#inputclassName").val()+'</td><td class="row-content">'+$("#inputparameter").val()+'</td><td class="row-content">'+$("#inputhandleType").val()+'</td></tr>' ;
+            $("#scheme-table").append(newRow);
+            $("#inputschemeID").val("");
+            $("#inputschemeName").val("");
+            $("#inputclassName").val("");
+            $("#inputparameter").val("");
+            $("#inputhandleType").val("");
+        }
+        else{
+            alert("参数设置不完整！");
+        }
     });
     </script>
