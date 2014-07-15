@@ -1,0 +1,90 @@
+<div class="page-header">
+    <h1 id="YaHei"><i class="glyphicon glyphicon-book"></i> 协议字典 <span>&gt; 模板参数</span></h1>
+</div>
+<div class="jarviswidget jarviswidget-sortable" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false" role="widget" style="margin-right:40px">
+    <div role="content">
+        <div class="widget-body no-padding">
+            <div class="widget-body-toolbar">
+            </div>
+            <div id="dt_basic_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                <div class="dt-top-row">
+                    <div class="dataTables_filter" id="dt_basic_filter">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i>
+                            </span>
+                            <input class="form-control" placeholder="filter" type="text" aria-controls="dt_basic" ng-model="query">
+                        </div>
+                        <button class="btn btn-default" >查找</button>
+                        <a class="btn btn-default" href="#/parameter/add">新增</a>
+                        <button class="btn btn-default" id="deleteParameter">删除</button>
+                    </div>
+                </div>
+                <div class="dt-wrapper">
+                    <table class="table table-bordered table-striped table-condensed table-hover smart-form has-tickbox">
+                        <thead>
+                            <tr>
+                                <th style="max-width:26px">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline" id="checkall">
+                                        <i></i> 
+                                    </label>
+                                </th>
+                                <th style="max-width:26px">删除</th>
+                                <th style="width:196px">参数类型</th>
+                                <th style="width:196px">工况类型</th>
+                                <th style="width:196px">参数编号</th>
+                                <th style="width:196px">参数名称</th>
+                                <th style="width:196px">参数长度</th>
+                                <th style="width:196px">最大值</th>
+                                <th style="width:196px">最小值</th>
+                                <th style="width:196px">参数单位</th>
+                            </tr>
+                        </thead>
+                        <tbody id="parameter-table">
+                            <tr ng-repeat="parameter in parameters|filter:query" ng-dblclick="update(parameter.num)">
+                                <td>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline">
+                                        <i></i> 
+                                    </label>
+                                </td>
+                                <td><button type="button" class="btn btn-default btn-xs" ng-click="delete($event.target)"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td>{{parameter.type}}</td>
+                                <td>{{parameter.condition}}</td>
+                                <td>{{parameter.num}}</td>
+                                <td>{{parameter.name}}</td>
+                                <td>{{parameter.length}}</td>
+                                <td>{{parameter.max}}</td>
+                                <td>{{parameter.min}}</td>
+                                <td>{{parameter.unit}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+    $(".checkbox input").click(function() {
+        if ($(this)[0].checked) {
+            $(this).parent().find("i").addClass("glyphicon glyphicon-ok");
+        } else {
+            $(this).parent().find("i").removeClass("glyphicon glyphicon-ok");
+        }
+    });
+    $("#checkall").click(function() {
+        if ($(this)[0].checked) {
+            $(".checkbox input").parent().find("i").addClass("glyphicon glyphicon-ok");
+        } else {
+            $(".checkbox input").parent().find("i").removeClass("glyphicon glyphicon-ok");
+        }
+    }); 
+
+    $("#deleteParameter").click(function(){
+        $(".checkbox input").each(function(){
+            if($(this).parent().find("i").hasClass("glyphicon glyphicon-ok"))
+                $(this).parent().parent().parent().remove();
+        })
+    });
+</script>
