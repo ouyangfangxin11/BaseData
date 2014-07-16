@@ -17,7 +17,7 @@
                             <input class="form-control" placeholder="protocol" type="text" aria-controls="dt_basic">
                         </div>
                         <button class="btn btn-default" >查找</button>
-                        <button class="btn btn-default" data-toggle="modal" data-target="#myModal">新增</button>
+                        <a class="btn btn-default" href="#/series/add">新增</a>
                         <button class="btn btn-default" id="deleteScheme">删除</button>
                     </div>
                 </div>
@@ -32,12 +32,12 @@
                                     </label>
                                 </th>
                                 <th style="max-width:26px">删除</th>
-                                <th style="width:196px">协议编号</th>
-                                <th style="width:196px">协议名称</th>
-                                <th style="width:196px">协议识别方式</th>
-                                <th style="width:196px">模板识别方式</th>
-                                <th style="width:196px">模板解析参数</th>
-                                <th style="width:196px">协议解析方式</th>
+                                <th style="width:196px">设备类型编号</th>
+                                <th style="width:196px">设备类型名称</th>
+                                <th style="width:196px">子类型</th>
+                                <th style="width:196px">父类型</th>
+                                <th style="width:196px">设备列表</th>
+                                <th style="width:196px">模板列表</th>
                             </tr>
                         </thead>
                         <tbody id="scheme-table">
@@ -49,12 +49,12 @@
                                     </label>
                                 </td>
                                 <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">xy20130125172707497</td>
-                                <td class="row-content">SCP协议</td>
-                                <td class="row-content">port 5050</td>
-                                <td class="row-content">SCP协议模板识别</td>
-                                <td class="row-content">10</td>
-                                <td class="row-content">一次解析</td>
+                                <td class="row-content">1c1f2c03</td>
+                                <td class="row-content">设备类型1</td>
+                                <td class="row-content">NO</td>
+                                <td class="row-content">NULL</td>
+                                <td class="row-content">...</td>
+                                <td class="row-content">...</td>
                             </tr>
                             <tr>
                                 <td>
@@ -64,12 +64,12 @@
                                     </label>
                                 </td>
                                 <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">xy20130125172707497</td>
-                                <td class="row-content">SCP协议</td>
-                                <td class="row-content">port 5050</td>
-                                <td class="row-content">SCP协议模板识别</td>
-                                <td class="row-content">10</td>
-                                <td class="row-content">一次解析</td>
+                                <td class="row-content">1c1f2c03</td>
+                                <td class="row-content">设备类型2</td>
+                                <td class="row-content">NO</td>
+                                <td class="row-content">设备类型1</td>
+                                <td class="row-content">...</td>
+                                <td class="row-content">...</td>
                             </tr>
                             <tr>
                                 <td>
@@ -79,12 +79,12 @@
                                     </label>
                                 </td>
                                 <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">xy20130125172707497</td>
-                                <td class="row-content">SCP协议</td>
-                                <td class="row-content">port 5050</td>
-                                <td class="row-content">SCP协议模板识别</td>
-                                <td class="row-content">10</td>
-                                <td class="row-content">一次解析</td>
+                                <td class="row-content">1c1f2c03</td>
+                                <td class="row-content">设备类型3</td>
+                                <td class="row-content">YES</td>
+                                <td class="row-content">设备类型1</td>
+                                <td class="row-content">设备1；</td>
+                                <td class="row-content">模板A；</td>
                             </tr>
                             <tr>
                                 <td>
@@ -94,12 +94,12 @@
                                     </label>
                                 </td>
                                 <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">xy20130125172707497</td>
-                                <td class="row-content">SCP协议</td>
-                                <td class="row-content">port 5050</td>
-                                <td class="row-content">SCP协议模板识别</td>
-                                <td class="row-content">10</td>
-                                <td class="row-content">一次解析</td>
+                                <td class="row-content">1c1f2c03</td>
+                                <td class="row-content">设备类型4</td>
+                                <td class="row-content">YES</td>
+                                <td class="row-content">设备类型2</td>
+                                <td class="row-content">设备2；</td>
+                                <td class="row-content">模板A；</td>
                             </tr>
                             <tr>
                                 <td>
@@ -109,12 +109,12 @@
                                     </label>
                                 </td>
                                 <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">xy20130125172707497</td>
-                                <td class="row-content">SCP协议</td>
-                                <td class="row-content">port 5050</td>
-                                <td class="row-content">SCP协议模板识别</td>
-                                <td class="row-content">10</td>
-                                <td class="row-content">一次解析</td>
+                                <td class="row-content">1c1f2c03</td>
+                                <td class="row-content">设备类型5</td>
+                                <td class="row-content">YES</td>
+                                <td class="row-content">设备类型2</td>
+                                <td class="row-content">设备3；</td>
+                                <td class="row-content">模板A；</td>
                             </tr>
                         </tbody>
                     </table>
@@ -160,59 +160,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">基本属性</h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal" role="form">
-                  <div class="form-group">
-                    <label for="protocolID" class="col-sm-3 control-label">协议编号</label>
-                    <div class="col-sm-8">
-                      <input type="text" class="form-control" id="inputprotocolID" placeholder="schemeID">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="protocolName" class="col-sm-3 control-label">协议名称</label>
-                    <div class="col-sm-8">
-                      <input type="text" class="form-control" id="inputprotocolName" placeholder="schemeName">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="protocolIdentify" class="col-sm-3 control-label">协议识别方式</label>
-                    <div class="col-sm-8">
-                      <input type="text" class="form-control" id="inputprotocolIdentify" placeholder="className">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="modelIdentify" class="col-sm-3 control-label">模板识别方式</label>
-                    <div class="col-sm-8">
-                      <input type="text" class="form-control" id="inputmodelIdentify" placeholder="parameter">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="modelIdentifyPara" class="col-sm-3 control-label">模板识别参数</label>
-                    <div class="col-sm-8">
-                      <input type="text" class="form-control" id="inputmodelIdentifyPara" placeholder="handleType">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="protocolAnalyze" class="col-sm-3 control-label">协议解析方式</label>
-                    <div class="col-sm-8">
-                      <input type="text" class="form-control" id="inputprotocolAnalyze" placeholder="handleType">
-                    </div>
-                  </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" id="resetScheme">重置</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" id="submitAddScheme">确认</button>
             </div>
         </div>
     </div>

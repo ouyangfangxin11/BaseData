@@ -26,6 +26,9 @@ BaseApp.config(['$routeProvider',
             .when('/series', {
                 templateUrl: 'template/series_look.html',
             })
+            .when('/series/add', {
+                templateUrl: 'template/series_add.html',
+            })
             .when('/iofile', {
                 templateUrl: 'template/iofile.html',
             })
