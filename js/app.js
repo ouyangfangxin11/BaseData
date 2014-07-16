@@ -11,8 +11,10 @@ BaseApp.config(['$routeProvider',
                 templateUrl: 'template/protocol.html',
             })
             .when('/model', {
-                //templateUrl: 'template/model_add.html',
                 templateUrl: 'template/model_look.html',
+            })
+            .when('/model/add', {
+                templateUrl: 'template/model_add.html',
                 controller: 'modelCtr',
             })
             .when('/scheme', {
@@ -20,6 +22,9 @@ BaseApp.config(['$routeProvider',
             })
             .when('/equipment', {
                 templateUrl: 'template/equipment.html',
+            })
+            .when('/series', {
+                templateUrl: 'template/series_look.html',
             })
             .when('/iofile', {
                 templateUrl: 'template/iofile.html',
