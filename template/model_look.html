@@ -12,11 +12,11 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i>
                             </span>
-                            <input class="form-control" placeholder="protocol" type="text" aria-controls="dt_basic">
+                            <input class="form-control" placeholder="protocol" type="text" aria-controls="dt_basic" ng-model="query">
                         </div>
                         <button class="btn btn-default" >查找</button>
                         <a class="btn btn-default" id="newModel" href="#/model/add">新增</a>
-                        <button class="btn btn-default" id="deleteScheme">删除</button>
+                        <button class="btn btn-default" id="deleteModel">删除</button>
                     </div>
                 </div>
                 <div class="dt-wrapper">
@@ -37,90 +37,24 @@
                                 <th style="width:196px">模板解析参数</th>
                             </tr>
                         </thead>
-                        <tbody id="scheme-table">
-                            <tr>
+                        <tbody id="model-table">
+                            <tr ng-repeat="model in models|filter:query" ng-dblclick="update(model.num)">
                                 <td>
                                     <label class="checkbox">
                                         <input type="checkbox" name="checkbox-inline">
                                         <i></i> 
                                     </label>
                                 </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">1c1f2c03</td>
-                                <td class="row-content">第一组模拟量</td>
-                                <td class="row-content">12</td>
-                                <td class="row-content">二进制无分割报文解析</td>
-                                <td class="row-content">10</td>
-                            </tr>
-                            <tr>
                                 <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
+                                    <button type="button" class="btn btn-default btn-xs" ng-click="delete($event.target)">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
                                 </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">1c1f2c03</td>
-                                <td class="row-content">第一组模拟量</td>
-                                <td class="row-content">12</td>
-                                <td class="row-content">二进制无分割报文解析</td>
-                                <td class="row-content">10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">1c1f2c03</td>
-                                <td class="row-content">第一组模拟量</td>
-                                <td class="row-content">12</td>
-                                <td class="row-content">二进制无分割报文解析</td>
-                                <td class="row-content">10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">1c1f2c03</td>
-                                <td class="row-content">第一组模拟量</td>
-                                <td class="row-content">12</td>
-                                <td class="row-content">二进制无分割报文解析</td>
-                                <td class="row-content">10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">1c1f2c03</td>
-                                <td class="row-content">第一组模拟量</td>
-                                <td class="row-content">12</td>
-                                <td class="row-content">二进制无分割报文解析</td>
-                                <td class="row-content">10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">1c1f2c03</td>
-                                <td class="row-content">第一组模拟量</td>
-                                <td class="row-content">12</td>
-                                <td class="row-content">二进制无分割报文解析</td>
-                                <td class="row-content">10</td>
+                                <td class="row-content">{{model.num}}</td>
+                                <td class="row-content">{{model.name}}</td>
+                                <td class="row-content">{{model.length}}</td>
+                                <td class="row-content">{{model.class}}</td>
+                                <td class="row-content">{{model.parameter}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -185,34 +119,7 @@
             $(".checkbox input").parent().find("i").removeClass("glyphicon glyphicon-ok");
         }
     });
-
-    
-    $("#scheme-table").find(".row-content").bind("dblclick", function(){  
-        var td = $(this);
-        var text = td.text();
-        var txt = $("<input type='text'>").val(text);
-        txt.blur(function(){
-            var newText = $(this).val();
-            $(this).remove();
-            td.text(newText);
-        });
-        txt.keypress(function(e){
-            var code = event.keyCode; 
-            if (13 == code) { 
-            var newText = $(this).val();
-            $(this).remove();
-            td.text(newText);
-            }
-        });
-        td.text("");
-        td.append(txt);
-    }); 
-
-    $("td button").click(function(){
-        $(this).parent().parent().remove();
-    });
-
-    $("#deleteScheme").click(function(){
+    $("#deleteModel").click(function(){
         $(".checkbox input").each(function(){
             if($(this).parent().find("i").hasClass("glyphicon glyphicon-ok"))
                 $(this).parent().parent().parent().remove();

@@ -12,14 +12,18 @@ BaseApp.config(['$routeProvider',
             })
             .when('/model', {
                 templateUrl: 'template/model_look.html',
-                //controller: 'modelCtr',
+                controller: 'modellookCtr',
             })
             .when('/model/add', {
                 templateUrl: 'template/model_add.html',
                 controller: 'modeladdCtr',
             })
-            .when('/model/reset', {
+            .when('/model/add/:id', {
                 templateUrl: 'template/model_add.html',
+                controller: 'modeladdCtr',
+            })
+            .when('/model/reset', {
+                redirectTo: '/model/add',
             })
             .when('/scheme', {
                 templateUrl: 'template/scheme.html',
@@ -315,7 +319,11 @@ BaseApp.controller('parameterlookCtr', function($scope) {
         'unit': 'unit5'
     }];
     $scope.delete = function(dom) {
-        $(dom).parent().parent().remove();
+        if (dom.type == "button") {
+            $(dom).parent().parent().remove();
+        } else {
+            $(dom).parent().parent().parent().remove();
+        };
     };
     $scope.update = function(id) {
         window.location.href = "#/parameter/add/" + id;
@@ -464,4 +472,78 @@ BaseApp.controller('modeladdCtr', function($scope) {
             }
         }
     };
+});
+
+BaseApp.controller('modellookCtr', function($scope) {
+    $scope.models = [{
+        'num': 'num1',
+        'name': 'name1',
+        'length': 'length1',
+        'class': 'class1',
+        'parameter': 'parameter1'
+    }, {
+        'num': 'num2',
+        'name': 'name1',
+        'length': 'length1',
+        'class': 'class1',
+        'parameter': 'parameter1'
+    }, {
+        'num': 'num3',
+        'name': 'name1',
+        'length': 'length1',
+        'class': 'class1',
+        'parameter': 'parameter1'
+    }, {
+        'num': 'num4',
+        'name': 'name1',
+        'length': 'length1',
+        'class': 'class1',
+        'parameter': 'parameter1'
+    }, {
+        'num': 'num5',
+        'name': 'name1',
+        'length': 'length1',
+        'class': 'class1',
+        'parameter': 'parameter1'
+    }, {
+        'num': 'num6',
+        'name': 'name1',
+        'length': 'length1',
+        'class': 'class1',
+        'parameter': 'parameter1'
+    }, {
+        'num': 'num7',
+        'name': 'name1',
+        'length': 'length1',
+        'class': 'class1',
+        'parameter': 'parameter1'
+    }, {
+        'num': 'num8',
+        'name': 'name1',
+        'length': 'length1',
+        'class': 'class1',
+        'parameter': 'parameter1'
+    }, {
+        'num': 'num9',
+        'name': 'name1',
+        'length': 'length1',
+        'class': 'class1',
+        'parameter': 'parameter1'
+    }, {
+        'num': 'num10',
+        'name': 'name1',
+        'length': 'length1',
+        'class': 'class1',
+        'parameter': 'parameter1'
+    }];
+    $scope.delete = function(dom) {
+        if (dom.type == "button") {
+            $(dom).parent().parent().remove();
+        } else {
+            $(dom).parent().parent().parent().remove();
+        };
+    };
+    $scope.update = function(id) {
+        window.location.href = "#/model/add/" + id;
+    }
 });
