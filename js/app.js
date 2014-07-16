@@ -12,10 +12,14 @@ BaseApp.config(['$routeProvider',
             })
             .when('/model', {
                 templateUrl: 'template/model_look.html',
+                //controller: 'modelCtr',
             })
             .when('/model/add', {
                 templateUrl: 'template/model_add.html',
-                controller: 'modelCtr',
+                controller: 'modeladdCtr',
+            })
+            .when('/model/reset', {
+                templateUrl: 'template/model_add.html',
             })
             .when('/scheme', {
                 templateUrl: 'template/scheme.html',
@@ -318,7 +322,7 @@ BaseApp.controller('parameterlookCtr', function($scope) {
     }
 });
 
-BaseApp.controller('modelCtr', function($scope) {
+BaseApp.controller('modeladdCtr', function($scope) {
     $scope.parameters = [{
         'num': 'num1',
         'name': 'name1',
@@ -370,7 +374,47 @@ BaseApp.controller('modelCtr', function($scope) {
         'type': 'type5',
         'length': 'length5'
     }];
-
+    $scope.schemes = [{
+        'num': 'num11',
+        'type': 'type1',
+        'name': 'name1',
+        'parameter': 'parameter1'
+    }, {
+        'num': 'num21',
+        'type': 'type2',
+        'name': 'name2',
+        'parameter': 'parameter2'
+    }, {
+        'num': 'num31',
+        'type': 'type3',
+        'name': 'name3',
+        'parameter': 'parameter3'
+    }, {
+        'num': 'num41',
+        'type': 'type4',
+        'name': 'name4',
+        'parameter': 'parameter4'
+    }, {
+        'num': 'num51',
+        'type': 'type1',
+        'name': 'name1',
+        'parameter': 'parameter1'
+    }, {
+        'num': 'num61',
+        'type': 'type2',
+        'name': 'name2',
+        'parameter': 'parameter2'
+    }, {
+        'num': 'num71',
+        'type': 'type3',
+        'name': 'name3',
+        'parameter': 'parameter3'
+    }, {
+        'num': 'num81',
+        'type': 'type4',
+        'name': 'name4',
+        'parameter': 'parameter4'
+    }];
     $scope.check = function(dom) {
         if (dom.checked) {
             $(dom).parent().find("i").addClass("glyphicon glyphicon-ok");
@@ -387,8 +431,7 @@ BaseApp.controller('modelCtr', function($scope) {
     };
     $scope.add1 = function() {
         var doms = $("#oldparameter .glyphicon.glyphicon-ok").parents("tr");
-        var oldlength = $('#oldparameter').find('tr').length;
-        var newlength = $('.emptytable').length;
+        var newlength = $('#newparameter .emptytable').length;
         var length = $("#newparameter").children().length - newlength;
         $("#oldparameter .glyphicon.glyphicon-ok").parents("tr").remove();
         for (var i = doms.length - 1; i >= 0; i--) {
@@ -396,12 +439,29 @@ BaseApp.controller('modelCtr', function($scope) {
             $($(doms[i]).find("td")[0]).html(length.toString());
             if (newlength > 0) {
                 newlength--;
-                $($('.emptytable')[0]).html($(doms[i]).html());
-                $($('.emptytable')[0]).removeClass('emptytable');
+                $($('#newparameter .emptytable')[0]).html($(doms[i]).html());
+                $($('#newparameter .emptytable')[0]).removeClass('emptytable');
             } else {
                 $("#newparameter").append(doms[i]);
             }
-            oldlength--;
+        }
+    };
+    $scope.add2 = function() {
+        var doms = $("#oldscheme .glyphicon.glyphicon-ok").parents("tr");
+        var newlength = $('#newscheme .emptytable').length;
+        var length = $("#newscheme").children().length - newlength;
+        $("#oldscheme .glyphicon.glyphicon-ok").parents("tr").remove();
+        for (var i = doms.length - 1; i >= 0; i--) {
+            length++;
+            $($(doms[i]).find("td")[0]).html(length.toString());
+            $(doms[i]).find("td").removeClass('hidden');
+            if (newlength > 0) {
+                newlength--;
+                $($('#newscheme .emptytable')[0]).html($(doms[i]).html());
+                $($('#newscheme .emptytable')[0]).removeClass('emptytable');
+            } else {
+                $("#newscheme").append(doms[i]);
+            }
         }
     };
 });

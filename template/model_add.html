@@ -81,36 +81,40 @@
                                 </table>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-5 control-label">模板标识</label>
-                                <div class="col-md-5">
+                                <label class="col-md-3 control-label">模板标识</label>
+                                <div class="col-md-9">
                                     <div class="radio">
-                                        <label>
+                                        <label class="col-md-4">
                                             <input type="radio" name="radio1">
                                             <span>公有标识</span> 
                                         </label>
+                                        <input type="text" name="common" class="col-md-6">
                                     </div>
                                     <div class="radio">
-                                        <label>
+                                        <label class="col-md-4">
                                             <input type="radio" name="radio1">
                                             <span>唯一标识</span> 
                                         </label>
+                                        <input type="text" name="unique" class="col-md-6">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-5 control-label">模板长度</label>
-                                <div class="col-md-5">
+                                <label class="col-md-3 control-label">模板长度</label>
+                                <div class="col-md-9">
                                     <div class="radio">
-                                        <label>
+                                        <label class="col-md-4">
                                             <input type="radio" name="radio2">
                                             <span>固定长度</span> 
                                         </label>
+                                        <input type="text" name="static" class="col-md-6">
                                     </div>
                                     <div class="radio" >
-                                        <label>
+                                        <label class="col-md-4">
                                             <input type="radio" name="radio2">
                                             <span>非固定长度</span> 
                                         </label>
+                                        <input type="text" name="varied" class="col-md-6">
                                     </div>
                                 </div>
                             </div>
@@ -168,63 +172,44 @@
                     </div>
                 </div>
                 <div class="divider"></div>
-                <div class="row" id="modelParameter">
+                <div class="row" id="modelScheme">
                     <div class="col-md-12 col-xs-12">
                         <fieldset class="col-md-6 col-xs-6" ondrop="drop2(event)" ondragover="allowDrop2(event)">
                             <legend>模板预处理方案</legend>
-                            <div class="progress progress-striped active">
-                              <div class="progress-bar progress-bar-success" style="width: 35%">35%</div>
-                              <div class="progress-bar progress-bar-warning" style="width: 20%">20%</div>
-                              <div class="progress-bar progress-bar-danger" style="width: 10%">10%</div>
-                            </div>
                             <div class="dt-wrapper">
                                 <table class="table table-bordered table-striped table-condensed table-hover smart-form">
                                     <thead>
                                         <tr>
-                                            <th>参数顺序</th>
-                                            <th>参数编号</th>
-                                            <th>参数名称</th>
-                                            <th>参数类型</th>
-                                            <th>参数长度</th>
+                                            <th>方案顺序</th>
+                                            <th>方案类型</th>
+                                            <th>方案名称</th>
+                                            <th>模板参数</th>
+                                            <th>处理参数</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="newscheme">
+                                        <tr class='emptytable'>
+                                            <td>1</td><td></td><td></td><td></td>
+                                            <td><input type='text' placeholder="请输入参数"></td>
+                                        </tr>
+                                        <tr class='emptytable'>
+                                            <td>2</td><td></td><td></td><td></td>
+                                            <td><input type='text' placeholder="请输入参数"></td>
+                                        </tr>
+                                        <tr class='emptytable'>
+                                            <td>3</td><td></td><td></td><td></td>
+                                            <td><input type='text' placeholder="请输入参数"></td>
+                                        </tr>
+                                        <tr class='emptytable'>
+                                            <td>4</td><td></td><td></td><td></td>
+                                            <td><input type='text' placeholder="请输入参数"></td>
+                                        </tr>
+                                        <tr class='emptytable'>
+                                            <td>5</td><td></td><td></td><td></td>
+                                            <td><input type='text' placeholder="请输入参数"></td>
+                                        </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-5 control-label">模板标识</label>
-                                <div class="col-md-5">
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="radio1">
-                                            <span>公有标识</span> 
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="radio1">
-                                            <span>唯一标识</span> 
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-5 control-label">模板长度</label>
-                                <div class="col-md-5">
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="radio2">
-                                            <span>固定长度</span> 
-                                        </label>
-                                    </div>
-                                    <div class="radio" >
-                                        <label>
-                                            <input type="radio" name="radio2">
-                                            <span>非固定长度</span> 
-                                        </label>
-                                    </div>
-                                </div>
                             </div>
                         </fieldset>
                         <fieldset class="col-md-6 col-xs-6">
@@ -239,7 +224,7 @@
                                             </span>
                                             <input class="form-control" placeholder="Filter" type="text" aria-controls="dt_basic" ng-model="query2">
                                         </div>
-                                        <button class="btn btn-default" ng-click="add()">新增</button>
+                                        <button class="btn btn-default" ng-click="add2()">新增</button>
                                     </div>
                                 </div>
                                 <div class="dt-wrapper">
@@ -252,13 +237,13 @@
                                                         <i></i>
                                                     </label>
                                                 </th>
-                                                <th>参数编号</th>
-                                                <th>参数名称</th>
-                                                <th>参数类型</th>
-                                                <th>参数长度</th>
+                                                <th>方案类型</th>
+                                                <th>方案名称</th>
+                                                <th>模板参数</th>
+                                                <th class="hidden">处理参数</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="oldmodel">
+                                        <tbody id="oldscheme">
                                             <!--此处替换模板，每个tr元素需要有一个独特的id-->
                                             <tr id="{{scheme.num}}" draggable="true" ondragstart="drag2(event)" ng-repeat="scheme in schemes|filter:query2">
                                                 <td>
@@ -267,27 +252,12 @@
                                                         <i></i>
                                                     </label>
                                                 </td>
-                                                <td>{{scheme.num}}</td>
+                                                <td>{{scheme.type}}</td>
                                                 <td>{{scheme.name}}</td>
                                                 <td>{{scheme.parameter}}</td>
-                                                <td>{{scheme.classname}}</td>
-                                                <td>{{scheme.type}}</td>
                                                 <td class="hidden">
                                                     <input type='text' placeholder="请输入参数">
                                                 </td>
-                                            </tr>
-                                            <tr ng-repeat="scheme in emptyschemes">
-                                                <td>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" name="checkbox-inline" disabled='true'>
-                                                    </label>
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="hidden"></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -296,6 +266,10 @@
                         </fieldset>
                     </div>
                 </div>
+            </div>
+            <div class="form-actions" style="margin-bottom:0px;">
+                <a class="btn btn-default" href="#/model/reset">重置</a>
+                <button class="btn btn-primary" onclick="submitForm()">确认</button>
             </div>
         </form>
     </div>
@@ -311,30 +285,41 @@ var drop1 = function(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("Text");
     var dom = document.getElementById(data);
-    var oldlength = $('#oldparameter').find('tr').length;
-    var newlength = $('.emptytable').length;
+    var newlength = $('#newparameter .emptytable').length;
     var length = $("#newparameter").children().length - newlength + 1;
     $($(dom).find("td")[0]).html(length.toString());
     if (newlength > 0) {
-        $($('.emptytable')[0]).html($(dom).html());
-        $($('.emptytable')[0]).removeClass('emptytable');
+        $($('#newparameter .emptytable')[0]).html($(dom).html());
+        $($('#newparameter .emptytable')[0]).removeClass('emptytable');
         $(dom).remove();
     } else {
         $("#newparameter").append(dom);
     }
 };
-var changeParameter1 = function() {
-    var selected = $("#inputParameter").val();
-    if (selected == 3) {
-        $('#inputCondition').attr("disabled", "disabled");
-        $('#inputUnit').attr("disabled", "disabled");
+var allowDrop2 = function(ev) {
+    ev.preventDefault();
+};
+var drag2 = function(ev) {
+    ev.dataTransfer.setData("Text", ev.target.id);
+};
+var drop2 = function(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("Text");
+    var dom = document.getElementById(data);
+    var newlength = $('#newscheme .emptytable').length;
+    var length = $("#newscheme").children().length - newlength + 1;
+    $($(dom).find("td")[0]).html(length.toString());
+    $(dom).find("td").removeClass('hidden');
+    if (newlength > 0) {
+        $($('#newscheme .emptytable')[0]).html($(dom).html());
+        $($('#newscheme .emptytable')[0]).removeClass('emptytable');
+        $(dom).remove();
     } else {
-        $('#inputCondition').removeAttr("disabled");
-        $('#inputUnit').removeAttr("disabled");
-    };
+        $("#newscheme").append(dom);
+    }
 };
 var submitForm = function() {
-    window.location.href = "#/parameter";
+    window.location.href = "#/model";
     $(".form-horizontal")[0].submit();
 }
 </script>

@@ -1,5 +1,7 @@
 <div class="page-header">
-    <h1 id="YaHei"><i class="glyphicon glyphicon-book"></i> 协议字典 <span>&gt; 模板参数</span></h1>
+    <h1 id="YaHei"><i class="glyphicon glyphicon-book"></i> 协议字典
+        <span>&gt; 模板参数</span>
+    </h1>
 </div>
 <div class="jarviswidget jarviswidget-sortable" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false" role="widget">
     <div role="content">
@@ -14,7 +16,7 @@
                             </span>
                             <input class="form-control" placeholder="filter" type="text" aria-controls="dt_basic" ng-model="query">
                         </div>
-                        <button class="btn btn-default" >查找</button>
+                        <button class="btn btn-default">查找</button>
                         <a class="btn btn-default" href="#/parameter/add">新增</a>
                         <button class="btn btn-default" id="deleteParameter">删除</button>
                     </div>
@@ -48,7 +50,11 @@
                                         <i></i> 
                                     </label>
                                 </td>
-                                <td><button type="button" class="btn btn-default btn-xs" ng-click="delete($event.target)"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td>
+                                    <button type="button" class="btn btn-default btn-xs" ng-click="delete($event.target)">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
+                                </td>
                                 <td>{{parameter.type}}</td>
                                 <td>{{parameter.condition}}</td>
                                 <td>{{parameter.num}}</td>
@@ -61,30 +67,71 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="dt-row dt-bottom-row">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="dataTables_info" id="dt_basic_info">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <div class="dataTables_paginate paging_bootstrap_full">
+                                <ul class="pagination">
+                                    <li class="first">
+                                        <a href="#/scheme">First</a>
+                                    </li>
+                                    <li class="prev">
+                                        <a href="#">Previous</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">5</a>
+                                    </li>
+                                    <li class="next">
+                                        <a href="#">Next</a>
+                                    </li>
+                                    <li class="last">
+                                        <a href="#">Last</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-    <script>
-    $(".checkbox input").click(function() {
-        if ($(this)[0].checked) {
-            $(this).parent().find("i").addClass("glyphicon glyphicon-ok");
-        } else {
-            $(this).parent().find("i").removeClass("glyphicon glyphicon-ok");
-        }
-    });
-    $("#checkall").click(function() {
-        if ($(this)[0].checked) {
-            $(".checkbox input").parent().find("i").addClass("glyphicon glyphicon-ok");
-        } else {
-            $(".checkbox input").parent().find("i").removeClass("glyphicon glyphicon-ok");
-        }
-    }); 
+<script>
+$(".checkbox input").click(function() {
+    if ($(this)[0].checked) {
+        $(this).parent().find("i").addClass("glyphicon glyphicon-ok");
+    } else {
+        $(this).parent().find("i").removeClass("glyphicon glyphicon-ok");
+    }
+});
+$("#checkall").click(function() {
+    if ($(this)[0].checked) {
+        $(".checkbox input").parent().find("i").addClass("glyphicon glyphicon-ok");
+    } else {
+        $(".checkbox input").parent().find("i").removeClass("glyphicon glyphicon-ok");
+    }
+});
 
-    $("#deleteParameter").click(function(){
-        $(".checkbox input").each(function(){
-            if($(this).parent().find("i").hasClass("glyphicon glyphicon-ok"))
-                $(this).parent().parent().parent().remove();
-        })
-    });
+$("#deleteParameter").click(function() {
+    $(".checkbox input").each(function() {
+        if ($(this).parent().find("i").hasClass("glyphicon glyphicon-ok"))
+            $(this).parent().parent().parent().remove();
+    })
+});
 </script>
