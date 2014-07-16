@@ -11,7 +11,8 @@ BaseApp.config(['$routeProvider',
                 templateUrl: 'template/protocol.html',
             })
             .when('/model', {
-                templateUrl: 'template/model_add.html',
+                //templateUrl: 'template/model_add.html',
+                templateUrl: 'template/model_look.html',
                 controller: 'modelCtr',
             })
             .when('/scheme', {
