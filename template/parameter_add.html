@@ -1,231 +1,189 @@
 <div class="page-header">
-    <h1 id="YaHei"><i class="glyphicon glyphicon-book"></i> 协议字典 <span>&gt; 模板参数</span></h1>
+	<h1 id="YaHei"><i class="glyphicon glyphicon-book"></i> 协议字典 <span>&gt; 模板参数</span></h1>
 </div>
 <div class="col-md-6 col-xs-6">
-    <div class="jarviswidget jarviswidget-sortable" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false" role="widget" style=""   ondrop="drop(event)" ondragover="allowDrop(event)">
-        <header role="heading">
-            <h2 id="YaHei">处理方案</h2>
-        </header>
-        <div role="content">
-            <div class="widget-body">
-                <form class="form-horizontal">
-                    <fieldset>
-                        <legend>基本属性</legend>
-                        <div class="form-group">
-                            <label for="inputParameter" class="col-md-3 control-label">参数类型</label>
-                            <div class="col-md-8">
-                                <select class="form-control" onchange="changeParameter()" id="inputParameter" >
-                                    <option selected value="">--请选择--</option>
-                                    <option value='1'>工况参数</option>
-                                    <option value='2'>保留参数</option>
-                                    <option value='3'>协议参数</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputCondition" class="col-md-3 control-label">工况类型</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" id="inputCondition" placeholder="请输入...">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputNumber" class="col-md-3 control-label">参数编号</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" id="inputNumber" placeholder="请输入...">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputName" class="col-md-3 control-label">参数名称</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" id="inputName" placeholder="请输入...">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputLength" class="col-md-3 control-label">参数长度</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" id="inputLength" placeholder="请输入...">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputMax" class="col-md-3 control-label">最大值</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" id="inputMax" placeholder="请输入...">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputMin" class="col-md-3 control-label">最小值</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" id="inputMin" placeholder="请输入...">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputUnit" class="col-md-3 control-label">单位</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" id="inputUnit" placeholder="请输入...">
-                            </div>
-                        </div>
-                        <legend>关联处理方案</legend>
-                        <div class="dt-wrapper">
-                            <table class="table table-bordered table-striped table-condensed table-hover smart-form">
-                                <thead>
-                                    <tr>
-                                        <th>处理顺序</th>
-                                        <th>方案编号</th>
-                                        <th>方案名称</th>
-                                        <th>方案参数</th>
-                                        <th>对应类名</th>
-                                        <th>方案参数</th>
-                                        <th>处理参数</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="newmodel">
-                                    <tr class='emptytable'>
-                                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                                        <td><input type='text' placeholder="请输入参数"></td>
-                                    </tr>
-                                    <tr class='emptytable'>
-                                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                                        <td><input type='text' placeholder="请输入参数"></td>
-                                    </tr>
-                                    <tr class='emptytable'>
-                                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                                        <td><input type='text' placeholder="请输入参数"></td>
-                                    </tr>
-                                    <tr class='emptytable'>
-                                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                                        <td><input type='text' placeholder="请输入参数"></td>
-                                    </tr>
-                                    <tr class='emptytable'>
-                                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                                        <td><input type='text' placeholder="请输入参数"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </fieldset>
-                    <div class="form-actions">
-                        <a class="btn btn-default" href="#/parameter/reset">重置</a>
-                        <button class="btn btn-primary" onclick="submitForm()">确认</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+	<div class="jarviswidget jarviswidget-sortable" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false" role="widget" style=""   ondrop="drop(event)" ondragover="allowDrop(event)">
+		<header role="heading">
+			<h2 id="YaHei">处理方案</h2>
+		</header>
+		<div role="content">
+			<div class="widget-body">
+				<form class="form-horizontal">
+					<fieldset>
+						<legend>基本属性</legend>
+						<div class="form-group">
+							<label for="inputParameter" class="col-md-3 control-label">参数类型</label>
+							<div class="col-md-8">
+								<select class="form-control" onchange="changeParameter()" id="inputParameter" >
+									<option selected value="">--请选择--</option>
+									<option value='1'>工况参数</option>
+									<option value='2'>保留参数</option>
+									<option value='3'>协议参数</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputCondition" class="col-md-3 control-label">工况类型</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="inputCondition" placeholder="请输入...">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputNumber" class="col-md-3 control-label">参数编号</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="inputNumber" placeholder="请输入...">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputName" class="col-md-3 control-label">参数名称</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="inputName" placeholder="请输入...">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputLength" class="col-md-3 control-label">参数长度</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="inputLength" placeholder="请输入...">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputMax" class="col-md-3 control-label">最大值</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="inputMax" placeholder="请输入...">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputMin" class="col-md-3 control-label">最小值</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="inputMin" placeholder="请输入...">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputUnit" class="col-md-3 control-label">单位</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="inputUnit" placeholder="请输入...">
+							</div>
+						</div>
+						<legend>关联处理方案</legend>
+						<div class="dt-wrapper dt-table">
+							<table class="table table-bordered table-striped table-condensed table-hover smart-form">
+								<thead>
+									<tr>
+										<th style="padding-right: 20px;">处理顺序</th>
+										<th>方案编号</th>
+										<th>方案名称</th>
+										<th>方案参数</th>
+										<th>对应类名</th>
+										<th>方案参数</th>
+										<th>处理参数</th>
+									</tr>
+								</thead>
+								<tbody id="newmodel">
+									<tr class='emptytable'>
+										<td>1</td><td></td><td></td><td></td><td></td><td></td>
+										<td><input type='text' placeholder="请输入参数"></td>
+									</tr>
+									<tr class='emptytable'>
+										<td>2</td><td></td><td></td><td></td><td></td><td></td>
+										<td><input type='text' placeholder="请输入参数"></td>
+									</tr>
+									<tr class='emptytable'>
+										<td>3</td><td></td><td></td><td></td><td></td><td></td>
+										<td><input type='text' placeholder="请输入参数"></td>
+									</tr>
+									<tr class='emptytable'>
+										<td>4</td><td></td><td></td><td></td><td></td><td></td>
+										<td><input type='text' placeholder="请输入参数"></td>
+									</tr>
+									<tr class='emptytable'>
+										<td>5</td><td></td><td></td><td></td><td></td><td></td>
+										<td><input type='text' placeholder="请输入参数"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</fieldset>
+					<div class="form-actions">
+						<a class="btn btn-default" href="#/parameter/reset">重置</a>
+						<button class="btn btn-primary" ng-click="submitForm()">确认</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="col-md-6 col-xs-6 ">
-    <div class="jarviswidget jarviswidget-sortable" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false" role="widget" style="">
-        <header role="heading">
-            <h2 id="YaHei">现有处理方案</h2>
-        </header>
-        <div role="content">
-            <div class="widget-body no-padding">
-                <div class="widget-body-toolbar">
-                </div>
-                <div id="dt_basic_wrapper" class="dt_wrapper form-inline" role="grid">
-                    <div class="dt-top-row">
-                        <div class="dataTables_filter" id="dt_basic_filter">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i>
-                                </span>
-                                <input class="form-control" placeholder="Filter" type="text" aria-controls="dt_basic" ng-model="query">
-                            </div>
-                            <button class="btn btn-default" ng-click="add()">新增</button>
-                        </div>
-                    </div>
-                    <div class="dt-wrapper dt-parameter" >
-                        <table class="table table-bordered table-striped table-condensed table-hover smart-form has-tickbox">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="checkbox-inline" ng-click="checkall($event.target)">
-                                            <i></i> 
-                                        </label>
-                                    </th>
-                                    <th>方案编号</th>
-                                    <th>方案名称</th>
-                                    <th>方案参数</th>
-                                    <th>对应类名</th>
-                                    <th>方案参数</th>
-                                    <th class="hidden">处理参数</th>
-                                </tr>
-                            </thead>
-                            <tbody id="oldmodel" ><!--此处替换模板，每个tr元素需要有一个独特的id-->
-                                <tr id="{{scheme.num}}" draggable="true" ondragstart="drag(event)" ng-repeat="scheme in schemes|filter:query">
-                                    <td>
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="checkbox-inline" ng-click="check($event.target)">
-                                            <i></i> 
-                                        </label>
-                                    </td>
-                                    <td>{{scheme.num}}</td>
-                                    <td>{{scheme.name}}</td>
-                                    <td>{{scheme.parameter}}</td>
-                                    <td>{{scheme.classname}}</td>
-                                    <td>{{scheme.type}}</td>
-                                    <td class="hidden"><input type='text' placeholder="请输入参数"></td>
-                                </tr>
-                                <tr ng-repeat="scheme in emptyschemes">
-                                    <td>
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="checkbox-inline" disabled='true'>
-                                        </label>
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="hidden"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="jarviswidget jarviswidget-sortable" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false" role="widget" style="">
+		<header role="heading">
+			<h2 id="YaHei">现有处理方案</h2>
+		</header>
+		<div role="content">
+			<div class="widget-body no-padding">
+				<div class="widget-body-toolbar">
+				</div>
+				<div id="dt_basic_wrapper" class="dt_wrapper form-inline" role="grid">
+					<div class="dt-top-row">
+						<div class="dataTables_filter" id="dt_basic_filter">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i>
+								</span>
+								<input class="form-control" placeholder="Filter" type="text" aria-controls="dt_basic" ng-model="query">
+							</div>
+							<button class="btn btn-default" ng-click="add()">新增</button>
+						</div>
+					</div>
+					<div class="dt-wrapper dt-parameter" >
+						<table class="table table-bordered table-striped table-condensed table-hover smart-form has-tickbox">
+							<thead>
+								<tr>
+									<th>
+										<label class="checkbox">
+											<input type="checkbox" name="checkbox-inline" ng-click="checkall($event.target)">
+											<i></i>
+										</label>
+									</th>
+									<th>方案编号</th>
+									<th>方案名称</th>
+									<th>方案参数</th>
+									<th>对应类名</th>
+									<th>方案参数</th>
+									<th class="hidden">处理参数</th>
+								</tr>
+							</thead>
+							<tbody id="oldmodel" ><!--此处替换模板，每个tr元素需要有一个独特的id-->
+							<tr id="{{scheme.num}}" draggable="true" ondragstart="drag(event)" ng-repeat="scheme in schemes|filter:query">
+								<td>
+									<label class="checkbox">
+										<input type="checkbox" name="checkbox-inline" onclick="check(this)">
+										<i></i>
+									</label>
+								</td>
+								<td>{{scheme.num}}</td>
+								<td>{{scheme.name}}</td>
+								<td>{{scheme.parameter}}</td>
+								<td>{{scheme.classname}}</td>
+								<td>{{scheme.type}}</td>
+								<td class="hidden"><input type='text' placeholder="请输入参数"></td>
+							</tr>
+							<tr ng-repeat="scheme in emptyschemes">
+								<td>
+									<label class="checkbox">
+										<input type="checkbox" name="checkbox-inline" disabled='true'>
+									</label>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td class="hidden"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-<script>
-var allowDrop = function(ev) {
-        ev.preventDefault();
-    };
-    var drag = function(ev) {
-        ev.dataTransfer.setData("Text", ev.target.id);
-    };
-    var drop = function(ev) {
-        ev.preventDefault();
-        var data = ev.dataTransfer.getData("Text");
-        var dom = document.getElementById(data);
-        var oldlength = $('#oldmodel').find('tr').length;
-        var newlength = $('.emptytable').length;
-        var length = $("#newmodel").children().length - newlength + 1;
-        var template = "<tr><td><label class=\"checkbox\"><input type=\"checkbox\" name=\"checkbox-inline\" disabled='disabled'></label></td><td></td><td></td><td></td><td></td><td></td><td class=\"hidden\"></td></tr>";
-        if (--oldlength < 20) {
-            $("#oldmodel").append(template);
-        };
-        $($(dom).find("td")[0]).html(length.toString());
-        $(dom).find("td").removeClass('hidden');
-        if (newlength > 0) {
-            $($('.emptytable')[0]).html($(dom).html());
-            $($('.emptytable')[0]).removeClass('emptytable');
-            $(dom).remove();
-        } else {
-            $("#newmodel").append(dom);
-        }
-    };
-    var changeParameter = function() {
-        var selected = $("#inputParameter").val();
-        if (selected == 3) {
-            $('#inputCondition').attr("disabled","disabled");
-            $('#inputUnit').attr("disabled","disabled");
-        } else {
-            $('#inputCondition').removeAttr("disabled");
-            $('#inputUnit').removeAttr("disabled");
-        };
-    };
-    var submitForm = function() {
-        window.location.href = "#/parameter";
-        $(".form-horizontal")[0].submit();
-    }
-</script>
+</div>
+<script src="../js/parameter.js"></script>

@@ -6,14 +6,20 @@ table {
 	max-height: 40px;
 }
 
+.dt-wrapper {
+	overflow: auto;
+}
+
 .dt-parameter {
-	overflow:auto;
 	max-height: 800px; 
 }
 
 .dt-model {
-	overflow:auto;
 	max-height: 350px; 
+}
+
+.dt-table {
+	max-height: 230px;
 }
 
 th {

@@ -60,3 +60,12 @@ form label {
 .no-padding .widget-body-toolbar {
 	background: rgba(255,255,255,0);
 }
+
+.glyphicon-collapse-up {
+	float: right;
+}
+
+.glyphicon-collapse-down {
+	float: right;
+	padding-left: 5px; 
+}

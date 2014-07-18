@@ -107,73 +107,73 @@ BaseApp.controller('parameteraddCtr', function($scope) {
         'classname': 'classname6',
         'type': 'type6'
     }, {
-        'num': 1,
+        'num': 7,
         'name': 'name1',
         'parameter': 'parameter1',
         'classname': 'classname1',
         'type': 'type1'
     }, {
-        'num': 2,
+        'num': 8,
         'name': 'name2',
         'parameter': 'parameter2',
         'classname': 'classname2',
         'type': 'type2'
     }, {
-        'num': 3,
+        'num': 9,
         'name': 'name3',
         'parameter': 'parameter3',
         'classname': 'classname3',
         'type': 'type3'
     }, {
-        'num': 4,
+        'num': 10,
         'name': 'name4',
         'parameter': 'parameter4',
         'classname': 'classname4',
         'type': 'type4'
     }, {
-        'num': 5,
+        'num': 11,
         'name': 'name5',
         'parameter': 'parameter5',
         'classname': 'classname5',
         'type': 'type5'
     }, {
-        'num': 6,
+        'num': 12,
         'name': 'name6',
         'parameter': 'parameter6',
         'classname': 'classname6',
         'type': 'type6'
     }, {
-        'num': 1,
+        'num': 13,
         'name': 'name1',
         'parameter': 'parameter1',
         'classname': 'classname1',
         'type': 'type1'
     }, {
-        'num': 2,
+        'num': 14,
         'name': 'name2',
         'parameter': 'parameter2',
         'classname': 'classname2',
         'type': 'type2'
     }, {
-        'num': 3,
+        'num': 15,
         'name': 'name3',
         'parameter': 'parameter3',
         'classname': 'classname3',
         'type': 'type3'
     }, {
-        'num': 4,
+        'num': 16,
         'name': 'name4',
         'parameter': 'parameter4',
         'classname': 'classname4',
         'type': 'type4'
     }, {
-        'num': 5,
+        'num': 17,
         'name': 'name5',
         'parameter': 'parameter5',
         'classname': 'classname5',
         'type': 'type5'
     }, {
-        'num': 6,
+        'num': 18,
         'name': 'name6',
         'parameter': 'parameter6',
         'classname': 'classname6',
@@ -184,14 +184,6 @@ BaseApp.controller('parameteraddCtr', function($scope) {
         for (var i = $scope.emptyschemes.length - 1; i >= 0; i--) {
             $scope.emptyschemes[i] = i;
         };
-    };
-
-    $scope.check = function(dom) {
-        if (dom.checked) {
-            $(dom).parent().find("i").addClass("glyphicon glyphicon-ok");
-        } else {
-            $(dom).parent().find("i").removeClass("glyphicon glyphicon-ok");
-        }
     };
     $scope.checkall = function(dom) {
         if (dom.checked) {
@@ -205,24 +197,34 @@ BaseApp.controller('parameteraddCtr', function($scope) {
         var oldlength = $('#oldmodel').find('tr').length;
         var newlength = $('.emptytable').length;
         var length = $("#newmodel").children().length - newlength;
-        var template = "<tr><td><label class=\"checkbox\"><input type=\"checkbox\" name=\"checkbox-inline\" disabled='disabled'></label></td><td></td><td></td><td></td><td></td><td></td><td class=\"hidden\"></td></tr>";
+        var template = "";
         $("tbody .glyphicon.glyphicon-ok").parents("tr").remove();
         for (var i = doms.length - 1; i >= 0; i--) {
             length++;
-            $($(doms[i]).find("td")[0]).html(length.toString());
+            $(doms[i]).attr("draggable", "false");
+            template = "<i class=\"glyphicon glyphicon-trash\" onclick=\"delete1(this)\"></i> ";
+            template += length.toString()
+            template += "<i class=\"glyphicon glyphicon-collapse-up\" onclick=\"up(this)\"></i>";
+            template += "<i class=\"glyphicon glyphicon-collapse-down \" onclick=\"down(this)\"></i>";
+            $($(doms[i]).find("td")[0]).html(template);
             $(doms[i]).find("td").removeClass('hidden');
             if (newlength > 0) {
                 newlength--;
-                $($('.emptytable')[0]).html($(doms[i]).html());
-                $($('.emptytable')[0]).removeClass('emptytable');
+                $($('.emptytable')[0]).before(doms[i]);
+                $($('.emptytable')[0]).remove();
             } else {
                 $("#newmodel").append(doms[i]);
             }
             oldlength--;
             if (oldlength < 20) {
+                template = "<tr><td><label class=\"checkbox\"><input type=\"checkbox\" name=\"checkbox-inline\" disabled='disabled'></label></td><td></td><td></td><td></td><td></td><td></td><td class=\"hidden\"></td></tr>";
                 $("#oldmodel").append(template);
             };
         }
+    };
+    $scope.submitForm = function() {
+        window.location.href = "#/parameter";
+        $(".form-horizontal")[0].submit();
     };
 });
 
@@ -350,7 +352,7 @@ BaseApp.controller('modeladdCtr', function($scope) {
         'num': 'num4',
         'name': 'name4',
         'type': 'type4',
-        'length': '4'
+        'length': '128'
     }, {
         'num': 'num5',
         'name': 'name5',
@@ -360,27 +362,27 @@ BaseApp.controller('modeladdCtr', function($scope) {
         'num': 'num6',
         'name': 'name1',
         'type': 'type1',
-        'length': 'length1'
+        'length': '64'
     }, {
         'num': 'num7',
         'name': 'name2',
         'type': 'type2',
-        'length': 'length2'
+        'length': '256'
     }, {
         'num': 'num8',
         'name': 'name3',
         'type': 'type3',
-        'length': 'length3'
+        'length': '8'
     }, {
         'num': 'num9',
         'name': 'name4',
         'type': 'type4',
-        'length': 'length4'
+        'length': '32'
     }, {
         'num': 'num10',
         'name': 'name5',
         'type': 'type5',
-        'length': 'length5'
+        'length': '16'
     }];
     $scope.schemes = [{
         'num': 'num11',
@@ -423,13 +425,6 @@ BaseApp.controller('modeladdCtr', function($scope) {
         'name': 'name4',
         'parameter': 'parameter4'
     }];
-    $scope.check = function(dom) {
-        if (dom.checked) {
-            $(dom).parent().find("i").addClass("glyphicon glyphicon-ok");
-        } else {
-            $(dom).parent().find("i").removeClass("glyphicon glyphicon-ok");
-        }
-    };
     $scope.checkall = function(dom) {
         if (dom.checked) {
             $(dom).parents('table').find("i").addClass("glyphicon glyphicon-ok");
@@ -441,18 +436,46 @@ BaseApp.controller('modeladdCtr', function($scope) {
         var doms = $("#oldparameter .glyphicon.glyphicon-ok").parents("tr");
         var newlength = $('#newparameter .emptytable').length;
         var length = $("#newparameter").children().length - newlength;
+        var colors = ['progress-bar-success', 'progress-bar-warning', 'progress-bar-danger', 'progress-bar-info'];
+        var template = "";
+        var len = 0;
+        var width = 0;
         $("#oldparameter .glyphicon.glyphicon-ok").parents("tr").remove();
         for (var i = doms.length - 1; i >= 0; i--) {
             length++;
-            $($(doms[i]).find("td")[0]).html(length.toString());
+            $(doms[i]).attr("draggable", "false");
+            template = "<i class=\"glyphicon glyphicon-trash\" onclick=\"delete1(this)\"></i> ";
+            template += length.toString()
+            template += "<i class=\"glyphicon glyphicon-collapse-up\" onclick=\"up1(this)\"></i>";
+            template += "<i class=\"glyphicon glyphicon-collapse-down \" onclick=\"down1(this)\"></i>";
+            $($(doms[i]).find("td")[0]).html(template);
+            var name = $($(doms[i]).find("td")[2]).html();
+            $("#common").append("<option value=\"" + name + "\">" + name + "</option>");
+            $("#unique").append("<option value=\"" + name + "\">" + name + "</option>");
             if (newlength > 0) {
                 newlength--;
-                $($('#newparameter .emptytable')[0]).html($(doms[i]).html());
-                $($('#newparameter .emptytable')[0]).removeClass('emptytable');
+                $($('#newparameter .emptytable')[0]).before(doms[i]);
+                $($('#newparameter .emptytable')[0]).remove();
             } else {
                 $("#newparameter").append(doms[i]);
             }
         }
+        var progress = $("#newparameter").children();
+        var amount = 0;
+        var color = 0;
+        $(".progress").children().remove();
+        for (var i = 0; i < length; i++) {
+            var dom = $(progress[i]).children()[4];
+            amount += parseInt($(dom).html());
+        };
+        for (var i = 0; i < length; i++) {
+            var dom = $(progress[i]).children()[4];
+            len = parseInt($(dom).html());
+            width = len * 100 / amount;
+            template = "<div class=\"progress-bar " + colors[color % 4] + "\" style=\"width: " + width + "%\">" + len + "</div>";
+            $(".progress").append(template);
+            color++;
+        };
     };
     $scope.add2 = function() {
         var doms = $("#oldscheme .glyphicon.glyphicon-ok").parents("tr");
@@ -461,16 +484,25 @@ BaseApp.controller('modeladdCtr', function($scope) {
         $("#oldscheme .glyphicon.glyphicon-ok").parents("tr").remove();
         for (var i = doms.length - 1; i >= 0; i--) {
             length++;
-            $($(doms[i]).find("td")[0]).html(length.toString());
+            $(doms[i]).attr("draggable", "false");
+            var template = "<i class=\"glyphicon glyphicon-trash\" onclick=\"delete2(this)\"></i> ";
+            template += length.toString()
+            template += "<i class=\"glyphicon glyphicon-collapse-up\" onclick=\"up2(this)\"></i>";
+            template += "<i class=\"glyphicon glyphicon-collapse-down \" onclick=\"down2(this)\"></i>";
+            $($(doms[i]).find("td")[0]).html(template);
             $(doms[i]).find("td").removeClass('hidden');
             if (newlength > 0) {
                 newlength--;
-                $($('#newscheme .emptytable')[0]).html($(doms[i]).html());
-                $($('#newscheme .emptytable')[0]).removeClass('emptytable');
+                $($('#newscheme .emptytable')[0]).before(doms[i]);
+                $($('#newscheme .emptytable')[0]).remove();
             } else {
                 $("#newscheme").append(doms[i]);
             }
         }
+    };
+    $scope.submitForm = function() {
+        window.location.href = "#/model";
+        $(".form-horizontal").submit();
     };
 });
 
