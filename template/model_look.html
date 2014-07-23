@@ -44,7 +44,7 @@
                             <tr ng-repeat="model in models|filter:query" ng-dblclick="update(model.num)">
                                 <td>
                                     <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
+                                        <input type="checkbox" name="checkbox-inline" onclick="check(this)">
                                         <i></i> 
                                     </label>
                                 </td>
@@ -108,13 +108,6 @@
     </div>
 </div>
     <script>
-    $(".checkbox input").click(function() {
-        if ($(this)[0].checked) {
-            $(this).parent().find("i").addClass("glyphicon glyphicon-ok");
-        } else {
-            $(this).parent().find("i").removeClass("glyphicon glyphicon-ok");
-        }
-    });
     $("#checkall").click(function() {
         if ($(this)[0].checked) {
             $(".checkbox input").parent().find("i").addClass("glyphicon glyphicon-ok");
@@ -128,4 +121,12 @@
                 $(this).parent().parent().parent().remove();
         })
     });
+
+    var check = function(dom) {
+        if (dom.checked) {
+            $(dom).parent().find("i").addClass("glyphicon glyphicon-ok");
+        } else {
+            $(dom).parent().find("i").removeClass("glyphicon glyphicon-ok");
+        }
+    };
     </script>

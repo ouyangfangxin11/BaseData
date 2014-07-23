@@ -27,7 +27,7 @@
                             <tr>
                                 <th style="max-width:26px">
                                     <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline" id="checkall">
+                                        <input type="checkbox" name="checkbox-inline" id="checkall" onclick="checkAll(this)">
                                         <i></i> 
                                     </label>
                                 </th>
@@ -41,80 +41,20 @@
                             </tr>
                         </thead>
                         <tbody id="scheme-table">
-                            <tr>
+                            <tr ng-repeat="protocol in protocols" >
                                 <td>
                                     <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
+                                        <input type="checkbox" name="checkbox-inline" onclick="checkClicked(this)">
                                         <i></i> 
                                     </label>
                                 </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">xy20130125172707497</td>
-                                <td class="row-content">SCP协议</td>
-                                <td class="row-content">port 5050</td>
-                                <td class="row-content">SCP协议模板识别</td>
-                                <td class="row-content">10</td>
-                                <td class="row-content">一次解析</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">xy20130125172707497</td>
-                                <td class="row-content">SCP协议</td>
-                                <td class="row-content">port 5050</td>
-                                <td class="row-content">SCP协议模板识别</td>
-                                <td class="row-content">10</td>
-                                <td class="row-content">一次解析</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">xy20130125172707497</td>
-                                <td class="row-content">SCP协议</td>
-                                <td class="row-content">port 5050</td>
-                                <td class="row-content">SCP协议模板识别</td>
-                                <td class="row-content">10</td>
-                                <td class="row-content">一次解析</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">xy20130125172707497</td>
-                                <td class="row-content">SCP协议</td>
-                                <td class="row-content">port 5050</td>
-                                <td class="row-content">SCP协议模板识别</td>
-                                <td class="row-content">10</td>
-                                <td class="row-content">一次解析</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">xy20130125172707497</td>
-                                <td class="row-content">SCP协议</td>
-                                <td class="row-content">port 5050</td>
-                                <td class="row-content">SCP协议模板识别</td>
-                                <td class="row-content">10</td>
-                                <td class="row-content">一次解析</td>
+                                <td><button type="button" class="btn btn-default btn-xs" onclick="deleteContent(this)"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td class="row-content" ondblclick="editContent(this)">{{protocol.protocolID}}</td>
+                                <td class="row-content" ondblclick="editContent(this)">{{protocol.protocolName}}</td>
+                                <td class="row-content" ondblclick="editContent(this)">{{protocol.protocolIdentify}}</td>
+                                <td class="row-content" ondblclick="editContent(this)">{{protocol.modelIdentify}}</td>
+                                <td class="row-content" ondblclick="editContent(this)">{{protocol.modelIdentifyPara}}</td>
+                                <td class="row-content" ondblclick="editContent(this)">{{protocol.protocolAnalyze}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -217,77 +157,4 @@
         </div>
     </div>
 </div>
-    <script>
-    $(".checkbox input").click(function() {
-        if ($(this)[0].checked) {
-            $(this).parent().find("i").addClass("glyphicon glyphicon-ok");
-        } else {
-            $(this).parent().find("i").removeClass("glyphicon glyphicon-ok");
-        }
-    });
-    $("#checkall").click(function() {
-        if ($(this)[0].checked) {
-            $(".checkbox input").parent().find("i").addClass("glyphicon glyphicon-ok");
-        } else {
-            $(".checkbox input").parent().find("i").removeClass("glyphicon glyphicon-ok");
-        }
-    });
-
-    
-    $("#scheme-table").find(".row-content").bind("dblclick", function(){  
-        var td = $(this);
-        var text = td.text();
-        var txt = $("<input type='text'>").val(text);
-        txt.blur(function(){
-            var newText = $(this).val();
-            $(this).remove();
-            td.text(newText);
-        });
-        txt.keypress(function(e){
-            var code = event.keyCode; 
-            if (13 == code) { 
-            var newText = $(this).val();
-            $(this).remove();
-            td.text(newText);
-            }
-        });
-        td.text("");
-        td.append(txt);
-    }); 
-
-    $("td button").click(function(){
-        $(this).parent().parent().remove();
-    });
-
-    $("#deleteScheme").click(function(){
-        $(".checkbox input").each(function(){
-            if($(this).parent().find("i").hasClass("glyphicon glyphicon-ok"))
-                $(this).parent().parent().parent().remove();
-        })
-    });
-
-    $("#resetScheme").click(function(){
-        $("#inputprotocolID").val("");
-        $("#inputprotocolName").val("");
-        $("#inputprotocolIdentify").val("");
-        $("#inputmodelIdentify").val("");
-        $("#inputmodelIdentifyPara").val("");
-        $("#inputprotocolAnalyze").val("");
-    });
-
-    $("#submitAddScheme").click(function(){
-        if($("#inputprotocolID").val() != "" && $("#inputprotocolName").val() != "" && $("#inputprotocolIdentify").val() != "" && $("#inputmodelIdentify").val() != "" && $("#inputmodelIdentifyPara").val() != "" && $("#inputprotocolAnalyze").val() != ""){
-            var newRow='<tr><td><label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i></label></td><td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td><td class="row-content">'+$("#inputprotocolID").val()+'</td><td class="row-content">'+$("#inputprotocolName").val()+'</td><td class="row-content">'+$("#inputprotocolIdentify").val()+'</td><td class="row-content">'+$("#inputmodelIdentify").val()+'</td><td class="row-content">'+$("#inputmodelIdentifyPara").val()+'</td><td class="row-content">'+$("#inputprotocolAnalyze").val()+'</td></tr>' ;
-            $("#scheme-table").append(newRow);
-            $("#inputprotocolID").val("");
-            $("#inputprotocolName").val("");
-            $("#inputprotocolIdentify").val("");
-            $("#inputmodelIdentify").val("");
-            $("#inputmodelIdentifyPara").val("");
-            $("#inputprotocolAnalyze").val("");
-        }
-        else{
-            alert("参数设置不完整！");
-        }
-    });
-    </script>
+<script src="js/protocol.js"></script>

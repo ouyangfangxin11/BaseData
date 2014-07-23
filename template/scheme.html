@@ -27,7 +27,7 @@
                             <tr>
                                 <th style="max-width:26px">
                                     <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline" id="checkall">
+                                        <input type="checkbox" name="checkbox-inline" id="checkall" onclick="checkAll(this)">
                                         <i></i> 
                                     </label>
                                 </th>
@@ -40,116 +40,19 @@
                             </tr>
                         </thead>
                         <tbody id="scheme-table">
-                            <tr>
+                            <tr ng-repeat="scheme in schemes">
                                 <td>
                                     <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
+                                        <input type="checkbox" name="checkbox-inline" onclick="checkClicked(this)">
                                         <i></i> 
                                     </label>
                                 </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">Row1.1</td>
-                                <td class="row-content">Row2</td>
-                                <td class="row-content">Row3</td>
-                                <td class="row-content">Row4</td>
-                                <td class="row-content">Row5</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">Row1.2</td>
-                                <td class="row-content">Row2</td>
-                                <td class="row-content">Row3</td>
-                                <td class="row-content">Row4</td>
-                                <td class="row-content">Row5</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">Row1.3</td>
-                                <td class="row-content">Row2</td>
-                                <td class="row-content">Row3</td>
-                                <td class="row-content">Row4</td>
-                                <td class="row-content">Row5</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">Row1.4</td>
-                                <td class="row-content">Row2</td>
-                                <td class="row-content">Row3</td>
-                                <td class="row-content">Row4</td>
-                                <td class="row-content">Row5</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">Row1.5</td>
-                                <td class="row-content">Row2</td>
-                                <td class="row-content">Row3</td>
-                                <td class="row-content">Row4</td>
-                                <td class="row-content">Row5</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">Row1.6</td>
-                                <td class="row-content">Row2</td>
-                                <td class="row-content">Row3</td>
-                                <td class="row-content">Row4</td>
-                                <td class="row-content">Row5</td>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">Row1.7</td>
-                                <td class="row-content">Row2</td>
-                                <td class="row-content">Row3</td>
-                                <td class="row-content">Row4</td>
-                                <td class="row-content">Row5</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="checkbox-inline">
-                                        <i></i> 
-                                    </label>
-                                </td>
-                                <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
-                                <td class="row-content">Row1.8</td>
-                                <td class="row-content">Row2</td>
-                                <td class="row-content">Row3</td>
-                                <td class="row-content">Row4</td>
-                                <td class="row-content">Row5</td>
+                                <td><button type="button" class="btn btn-default btn-xs" onclick="deleteContent(this)"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td class="row-content" ondblclick="editContent(this)">{{scheme.schemeID}}</td>
+                                <td class="row-content" ondblclick="editContent(this)">{{scheme.schemeName}}</td>
+                                <td class="row-content" ondblclick="editContent(this)">{{scheme.className}}</td>
+                                <td class="row-content" ondblclick="editContent(this)">{{scheme.parameter}}</td>
+                                <td class="row-content" ondblclick="editContent(this)">{{scheme.handleType}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -246,75 +149,4 @@
         </div>
     </div>
 </div>
-    <script>
-    $(".checkbox input").click(function() {
-        if ($(this)[0].checked) {
-            $(this).parent().find("i").addClass("glyphicon glyphicon-ok");
-        } else {
-            $(this).parent().find("i").removeClass("glyphicon glyphicon-ok");
-        }
-    });
-    $("#checkall").click(function() {
-        if ($(this)[0].checked) {
-            $(".checkbox input").parent().find("i").addClass("glyphicon glyphicon-ok");
-        } else {
-            $(".checkbox input").parent().find("i").removeClass("glyphicon glyphicon-ok");
-        }
-    });
-
-    
-    $("#scheme-table").find(".row-content").bind("dblclick", function(){  
-        var td = $(this);
-        var text = td.text();
-        var txt = $("<input type='text'>").val(text);
-        txt.blur(function(){
-            var newText = $(this).val();
-            $(this).remove();
-            td.text(newText);
-        });
-        txt.keypress(function(e){
-            var code = event.keyCode; 
-            if (13 == code) { 
-            var newText = $(this).val();
-            $(this).remove();
-            td.text(newText);
-            }
-        });
-        td.text("");
-        td.append(txt);
-    }); 
-
-    $("td button").click(function(){
-        $(this).parent().parent().remove();
-    });
-
-    $("#deleteScheme").click(function(){
-        $(".checkbox input").each(function(){
-            if($(this).parent().find("i").hasClass("glyphicon glyphicon-ok"))
-                $(this).parent().parent().parent().remove();
-        })
-    });
-
-    $("#resetScheme").click(function(){
-        $("#inputschemeID").val("");
-        $("#inputschemeName").val("");
-        $("#inputclassName").val("");
-        $("#inputparameter").val("");
-        $("#inputhandleType").val("");
-    });
-
-    $("#submitAddScheme").click(function(){
-        if($("#inputschemeID").val() != "" && $("#inputschemeName").val() != "" && $("#inputclassName").val() != "" && $("#inputparameter").val() != "" && $("#inputhandleType").val() != ""){
-            var newRow='<tr><td><label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i></label></td><td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td><td class="row-content">'+$("#inputschemeID").val()+'</td><td class="row-content">'+$("#inputschemeName").val()+'</td><td class="row-content">'+$("#inputclassName").val()+'</td><td class="row-content">'+$("#inputparameter").val()+'</td><td class="row-content">'+$("#inputhandleType").val()+'</td></tr>' ;
-            $("#scheme-table").append(newRow);
-            $("#inputschemeID").val("");
-            $("#inputschemeName").val("");
-            $("#inputclassName").val("");
-            $("#inputparameter").val("");
-            $("#inputhandleType").val("");
-        }
-        else{
-            alert("参数设置不完整！");
-        }
-    });
-    </script>
+<script src="js/scheme.js"></script>

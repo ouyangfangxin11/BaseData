@@ -9,6 +9,7 @@ BaseApp.config(['$routeProvider',
             })
             .when('/protocol', {
                 templateUrl: 'template/protocol.html',
+                controller: 'protocolCtr',
             })
             .when('/model', {
                 templateUrl: 'template/model_look.html',
@@ -27,9 +28,11 @@ BaseApp.config(['$routeProvider',
             })
             .when('/scheme', {
                 templateUrl: 'template/scheme.html',
+                controller: 'schemeCtrl',
             })
             .when('/equipment', {
                 templateUrl: 'template/equipment.html',
+                controller: 'equipmentCtrl'
             })
             .when('/series', {
                 templateUrl: 'template/series_look.html',
@@ -67,6 +70,96 @@ BaseApp.controller('indexCtr', function($scope) {
     };
     exporting(Highcharts);
     highchartdata();
+});
+
+BaseApp.controller('schemeCtrl', function($scope){
+    $scope.schemes = [{
+        'schemeID': 'Row11',
+        'schemeName': 'Row2',
+        'className': 'Row3',
+        'parameter': 'Row4',
+        'handleType': 'Row5',
+    },{
+        'schemeID': 'Row12',
+        'schemeName': 'Row2',
+        'className': 'Row3',
+        'parameter': 'Row4',
+        'handleType': 'Row5',
+    },{
+        'schemeID': 'Row13',
+        'schemeName': 'Row2',
+        'className': 'Row3',
+        'parameter': 'Row4',
+        'handleType': 'Row5',
+    },{
+        'schemeID': 'Row14',
+        'schemeName': 'Row2',
+        'className': 'Row3',
+        'parameter': 'Row4',
+        'handleType': 'Row5',
+    },{
+        'schemeID': 'Row15',
+        'schemeName': 'Row2',
+        'className': 'Row3',
+        'parameter': 'Row4',
+        'handleType': 'Row5',
+    },{'schemeID': 'Row16',
+        'schemeName': 'Row2',
+        'className': 'Row3',
+        'parameter': 'Row4',
+        'handleType': 'Row5',
+    },{
+        'schemeID': 'Row17',
+        'schemeName': 'Row2',
+        'className': 'Row3',
+        'parameter': 'Row4',
+        'handleType': 'Row5',
+    },{
+        'schemeID': 'Row18',
+        'schemeName': 'Row2',
+        'className': 'Row3',
+        'parameter': 'Row4',
+        'handleType': 'Row5',
+    }];
+});
+
+BaseApp.controller('protocolCtr', function($scope){
+    $scope.protocols = [{
+        'protocolID': 'xy20130125172707497',
+        'protocolName': 'SCP协议',
+        'protocolIdentify': 'port 5050',
+        'modelIdentify': 'SCP协议模板识别',
+        'modelIdentifyPara': 10,
+        'protocolAnalyze': '一次解析'
+    },{
+        'protocolID': 'xy20130125172707497',
+        'protocolName': 'SCP协议',
+        'protocolIdentify': 'port 5050',
+        'modelIdentify': 'SCP协议模板识别',
+        'modelIdentifyPara': 10,
+        'protocolAnalyze': '一次解析'
+    },{
+        'protocolID': 'xy20130125172707497',
+        'protocolName': 'SCP协议',
+        'protocolIdentify': 'port 5050',
+        'modelIdentify': 'SCP协议模板识别',
+        'modelIdentifyPara': 10,
+        'protocolAnalyze': '一次解析'
+    },{
+        'protocolID': 'xy20130125172707497',
+        'protocolName': 'SCP协议',
+        'protocolIdentify': 'port 5050',
+        'modelIdentify': 'SCP协议模板识别',
+        'modelIdentifyPara': 10,
+        'protocolAnalyze': '一次解析'
+    },{
+        'protocolID': 'xy20130125172707497',
+        'protocolName': 'SCP协议',
+        'protocolIdentify': 'port 5050',
+        'modelIdentify': 'SCP协议模板识别',
+        'modelIdentifyPara': 10,
+        'protocolAnalyze': '一次解析'
+    }];
 });
 
 BaseApp.controller('parameteraddCtr', function($scope) {
